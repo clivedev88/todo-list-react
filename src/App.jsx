@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import TodoList from './components/TodoList'
 import tarefas from './data/tarefas.json'
-import TodoInput from './components/TodoInput';
-import Todo from './components/TodoItem/Todo';
-import Filter from './components/Filter';
+import TodoInput from './components/TodoInput/index';
+import TodoList from './components/TodoList/index';
+import Filter from './components/Filter/index';
 import Button from './components/Button/Button';
 
 const App = () => {
 
   const [todos, setTodos] = useState([]);
+
+  const addTodo = (nome) => {
+    const novaTarefa = {
+      id: Date.now(),
+      nome,
+      finalizado: false,
+    };
+    setTodos([novaTarefa, ... todos]);
+  };
 
   useEffect(() => {
     setTodos(tarefas)
@@ -17,8 +25,8 @@ const App = () => {
   return (
     <div>
       <h1>Minhas Tarefas</h1>
-      <TodoInput />;
-      <Todo />
+      <TodoInput addTodo={addTodo} />
+      {/* <Todo tarefa={{id:1, nome:"exemplo"}}/> */}
       <TodoList todos={todos} />
       <Filter />
       <Button />
