@@ -5,9 +5,10 @@ const Todo = ({ tarefa, toggleComplete, deleteTodo }) => {
     <li>
       <div>
         <input 
-        type="text"
+        type="checkbox"
         checked={tarefa.finalizado}
         onChange={() => toggleComplete(tarefa.id)}
+        className="w-5 h-5 cursor-pointer"
         />
         <span className={tarefa.finalizado ? 'line-through text-gray-400' : ''}>
       {tarefa.nome}

@@ -18,6 +18,18 @@ const App = () => {
     setTodos([novaTarefa, ... todos]);
   };
 
+  const toggleComplete = (id) => {
+    setTodos(
+      todos.map((todo) => 
+      todo.id === id ? {...todo, finalizado: !todo.finalizado} : todo
+      )
+    );
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   useEffect(() => {
     setTodos(tarefas)
   }, []);
@@ -26,7 +38,6 @@ const App = () => {
     <div>
       <h1>Minhas Tarefas</h1>
       <TodoInput addTodo={addTodo} />
-      {/* <Todo tarefa={{id:1, nome:"exemplo"}}/> */}
       <TodoList 
       todos={todos} 
       toggleComplete={toggleComplete}
