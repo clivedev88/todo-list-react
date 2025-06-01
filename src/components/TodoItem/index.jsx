@@ -9,7 +9,7 @@ const Todo = ({ tarefa, toggleComplete, deleteTodo }) => {
         checked={tarefa.finalizado}
         onChange={() => toggleComplete(tarefa.id)}
         />
-        <span>
+        <span className={tarefa.finalizado ? 'line-through text-gray-400' : ''}>
       {tarefa.nome}
         </span>
       </div>

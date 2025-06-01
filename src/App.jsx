@@ -27,7 +27,11 @@ const App = () => {
       <h1>Minhas Tarefas</h1>
       <TodoInput addTodo={addTodo} />
       {/* <Todo tarefa={{id:1, nome:"exemplo"}}/> */}
-      <TodoList todos={todos} />
+      <TodoList 
+      todos={todos} 
+      toggleComplete={toggleComplete}
+      deleteTodo={deleteTodo}
+      />
       <Filter />
       <Button />
     </div>
