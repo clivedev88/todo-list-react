@@ -2,7 +2,7 @@ import React from 'react'
 
 const Todo = ({ todo }) => {
   return (
-    <li>
+    <li className=''>
         <span>
       {todo.nome}
         </span>
