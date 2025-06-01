@@ -18,7 +18,7 @@ const App = () => {
     setTodos([novaTarefa, ... todos]);
   };
 
-  const toggleComplete = (id) => {
+  const tarefaConcluida = (id) => {
     setTodos(
       todos.map((todo) => 
       todo.id === id ? {...todo, finalizado: !todo.finalizado} : todo
@@ -26,7 +26,7 @@ const App = () => {
     );
   };
 
-  const deleteTodo = (id) => {
+  const removerTarefa = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
@@ -40,8 +40,8 @@ const App = () => {
       <TodoInput addTodo={addTodo} />
       <TodoList 
       todos={todos} 
-      toggleComplete={toggleComplete}
-      deleteTodo={deleteTodo}
+      tarefaConcluida={tarefaConcluida}
+      removerTarefa={removerTarefa}
       />
       <Filter />
       <Button />
