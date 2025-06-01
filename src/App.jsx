@@ -15,8 +15,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className='h-full mx-5'>
-      <h1 className='text-2xl font-bold mb-4 text-center'>Minhas Tarefas</h1>
+    <div>
+      <h1>Minhas Tarefas</h1>
       <TodoInput />;
       <Todo />
       <TodoList todos={todos} />
