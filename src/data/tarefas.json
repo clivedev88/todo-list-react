@@ -6,12 +6,12 @@
     },
     {
         "id": 2,
-        "nome": "Fazer Compras",
+        "nome": "Ler sobre Tailwind",
         "finalizado": true
     },
     {
         "id": 3,
-        "nome": "Exercitar",
+        "nome": "Fazer primeiros componentes",
         "finalizado": true
     }
 ]

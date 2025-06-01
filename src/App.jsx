@@ -1,13 +1,21 @@
-import { useState } from 'react'
-import './global.css'
+import React, { useEffect, useState } from 'react'
+import TodoList from './components/TodoList'
+import tarefas from './data/tarefas.json'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    setTodos(tarefas)
+  }, []);
 
   return (
-    <>
-    </>
+    <div className='min-h-screen bg-gray-100 p-4'>
+      <h1 className='text-2xl font-bold mb-4 text-center'>Minhas Tarefas</h1>
+      <TodoList todos={todos} />
+    </div>
   )
 }
 
-export default App
+export default App;
